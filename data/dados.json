@@ -1,0 +1,69 @@
+{
+  "conversationTypes": [
+    { "id": "pedir desculpas", "icon": "folded_hands", "title": "Pedir Desculpas" },
+    { "id": "terminar relacionamento", "icon": "heart_broken", "title": "Terminar Relacionamento" },
+    { "id": "pedir aumento", "icon": "money_bag", "title": "Pedir Aumento" },
+    { "id": "recusar convite", "icon": "block", "title": "Recusar Convite" },
+    { "id": "cobrar alguém", "icon": "timer", "title": "Cobrar Alguém" },
+    { "id": "dizer não", "icon": "close", "title": "Dizer Não" },
+    { "id": "falar que está magoado", "icon": "sentiment_sad", "title": "Expressar Mágoa" },
+    { "id": "colocar limites", "icon": "shield_with_heart", "title": "Colocar Limites" },
+    { "id": "dar feedback difícil", "icon": "chat_bubble", "title": "Dar Feedback" },
+    { "id": "conversar sobre ciúmes", "icon": "favorite", "title": "Falar sobre Ciúmes" },
+    { "id": "resolver mal-entendido", "icon": "replay", "title": "Resolver Mal-entendido" },
+    { "id": "conflito entre amigos", "icon": "handshake", "title": "Conflito de Amizade" }
+  ],
+  "peopleTypes": [
+    { "id": "chefe", "icon": "👔", "label": "Chefe" },
+    { "id": "colega", "icon": "🤝", "label": "Colega de Trabalho" },
+    { "id": "amigo", "icon": "👥", "label": "Amigo Próximo" },
+    { "id": "conhecido", "icon": "👋", "label": "Conhecido" },
+    { "id": "parente", "icon": "👪", "label": "Parente" },
+    { "id": "irmao", "icon": "🧑‍🤝‍🧑", "label": "Irmão/Irmã" },
+    { "id": "pais", "icon": "👨‍👩‍👦", "label": "Pai/Mãe" },
+    { "id": "parceiro", "icon": "💕", "label": "Crush/Parceiro" }
+  ],
+  "proximityLevel": [
+    { "id": "muito", "label": "Muito Próximo", "icon": "❤️" },
+    { "id": "medio", "label": "Mediano", "icon": "🤗" },
+    { "id": "pouco", "label": "Pouco Próximo", "icon": "🙂" },
+    { "id": "desconhecido", "label": "Quase Desconhecido", "icon": "😐" }
+  ],
+  "conversationPlace": [
+    { "id": "trabalho", "label": "Trabalho", "icon": "💼" },
+    { "id": "familia", "label": "Família", "icon": "🏠" },
+    { "id": "escola", "label": "Escola", "icon": "🎓" },
+    { "id": "relacionamento", "label": "Relacionamento", "icon": "💑" },
+    { "id": "amizade", "label": "Amizade", "icon": "🤝" },
+    { "id": "online", "label": "Online", "icon": "💻" },
+    { "id": "publico", "label": "Público", "icon": "🌍" }
+  ],
+  "conversationTone": [
+    { "id": "formal", "label": "Formal", "icon": "🎩", "desc": "Profissional e respeitoso" },
+    { "id": "semi-formal", "label": "Semi-formal", "icon": "👔", "desc": "Equilibrado e educado" },
+    { "id": "descontraído", "label": "Descontraído", "icon": "😊", "desc": "Leve e amigável" },
+    { "id": "emocional", "label": "Emocional", "icon": "💙", "desc": "Vulnerável e profundo" },
+    { "id": "direto", "label": "Direto", "icon": "🎯", "desc": "Objetivo e claro" },
+    { "id": "suave", "label": "Suave", "icon": "🌸", "desc": "Gentil e cuidadoso" }
+  ],
+   "conversationLength": [
+    { "id": "muito curta", "label": "Muito Curta", "icon": "⚡", "time": "1-2 min", "desc": "Rápida e direta" },
+    { "id": "curta", "label": "Curta", "icon": "🏃", "time": "3-5 min", "desc": "Objetiva e clara" },
+    { "id": "média", "label": "Média", "icon": "🚶", "time": "5-10 min", "desc": "Equilibrada" },
+    { "id": "longa", "label": "Longa", "icon": "🧘", "time": "10+ min", "desc": "Profunda e detalhada" }
+  ],
+   "actions": [
+    { "id": "Incluir presente simbólico", "icon": "🎁", "label": "Presente Simbólico" },
+    { "id": "Escrever uma carta", "icon": "✉️", "label": "Escrever Carta" },
+    { "id": "Compor uma música", "icon": "🎵", "label": "Compor Música" },
+    { "id": "Criar um poema", "icon": "📝", "label": "Criar Poema" },
+    { "id": "Pedir desculpas explicitamente", "icon": "🙏", "label": "Pedir Desculpas" },
+    { "id": "Ser firme", "icon": "💪", "label": "Ser Firme" },
+    { "id": "Ser gentil", "icon": "🌸", "label": "Ser Gentil" },
+    { "id": "Evitar conflito", "icon": "☮️", "label": "Evitar Conflito" },
+    { "id": "Dar espaço para resposta", "icon": "🎤", "label": "Espaço p/ Resposta" },
+    { "id": "Incluir abraço", "icon": "🤗", "label": "Incluir Abraço" },
+    { "id": "Oferecer ajuda prática", "icon": "🤝", "label": "Oferecer Ajuda" },
+    { "id": "Marcar próximo encontro", "icon": "📅", "label": "Próximo Encontro" }
+  ]
+}

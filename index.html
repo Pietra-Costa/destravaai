@@ -127,6 +127,134 @@
         </section>
     </main>
 
+    <!--FORM-->
+
+    <div class="timeline-container">
+        <!-- Progress bar de fundo -->
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+
+        <!-- Steps -->
+        <div class="steps">
+            <div class="step" data-step="1">
+                <div class="circle">1</div>
+                <span class="label">Tipo</span>
+            </div>
+            <div class="step" data-step="2">
+                <div class="circle">2</div>
+                <span class="label">Pessoa</span>
+            </div>
+            <div class="step" data-step="3">
+                <div class="circle">3</div>
+                <span class="label">Contexto</span>
+            </div>
+            <div class="step" data-step="4">
+                <div class="circle">4</div>
+                <span class="label">Tom</span>
+            </div>
+            <div class="step" data-step="5">
+                <div class="circle">5</div>
+                <span class="label">Tamanho</span>
+            </div>
+            <div class="step" data-step="6">
+                <div class="circle">6</div>
+                <span class="label">Extras</span>
+            </div>
+        </div>
+    </div>
+
+    <form>
+
+        <!--STEP 1-->
+
+        <section class="step1">
+            <h2>Qual conversa você quer destravar?</h2>
+            <p>Digite ou escolha uma das opções abaixo</p>
+
+            <input type="text" class="hero-input" id="heroInput" placeholder="Qual conversa você quer destravar?" />
+
+            <div class="cards"></div>
+
+        </section>
+
+        <!--STEP 2-->
+
+        <section class="step2" style="display: none;">
+            <h2>Com quem você vai conversar?</h2>
+            <p>O tipo de relacionamento influencia a abordagem</p>
+
+            <div class="cards-step2"></div>
+
+        </section>
+
+
+        <!--STEP 3-->
+
+
+        <section class="step3" style="display: none;">
+            <h2>Contexto da Conversa</h2>
+            <p>Entenda a proximidade e onde a conversa acontecerá</p>
+
+            <div class="step3-section">
+                <h3 class="step3-subtitle">Nível de proximidade</h3>
+                <div class="cards-step3-proximity"></div>
+            </div>
+
+            <div class="step3-section">
+                <h3 class="step3-subtitle">Onde será a conversa?</h3>
+                <div class="cards-step3-place"></div>
+            </div>
+        </section>
+
+        <!--STEP 4-->
+
+        <section class="step4" style="display: none;">
+            <h2>Qual tom você quer usar?</h2>
+            <p>O tom define a estratégia e as palavras que você usará</p>
+
+            <div class="cards-step4"></div>
+
+        </section>
+
+        <!--STEP 5-->
+
+        <section class="step5" style="display: none;">
+            <h2>Quanto tempo você tem?</h2>
+            <p>Isso ajuda a definir o nível de detalhe do roteiro</p>
+
+            <div class="cards-step5"></div>
+
+        </section>
+
+         <!--STEP 6-->
+
+         <section class="step6" style="display: none;">
+             <h2>Personalize ainda mais</h2>
+             <p>Selecione elementos extras que quer incluir (opcional)</p>
+
+             <div class="cards-step6"></div>
+
+         </section>
+
+
+        <div class="form-navigation">
+            <button type="button" id="backBtn" class="nav-btn back-btn" style="display: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Voltar
+            </button>
+            <button type="button" id="nextBtn" class="nav-btn next-btn">
+                Próximo
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+    </form>
+
     <script src="script.js"></script>
 </body>
 
