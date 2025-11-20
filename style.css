@@ -1694,3 +1694,197 @@ p {
     justify-content: center;
   }
 }
+
+.section-sobre {
+  padding: 6rem 1rem;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+.dark .section-sobre { 
+  background-color: #111827; 
+}
+.container-sobre { max-width: 64rem; margin: 0 auto; }
+
+/* Header */
+.header-sobre { text-align: center; margin-bottom: 4rem; }
+.badge-container { display: inline-block; margin-bottom: 1rem; }
+.badge-sobre {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  background: linear-gradient(to right, rgba(6, 182, 212, 0.1), rgba(14, 165, 233, 0.1));
+  color: #06b6d4;
+  font-weight: 500;
+}
+.title-sobre { font-size: 2.25rem; line-height: 2.5rem; margin-bottom: 1.5rem; color: #111827; }
+.dark .title-sobre { color: #f9fafb; }
+
+.title-sobre .highlight-sobre {
+  background: linear-gradient(to right, #06b6d4, #14b8a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Cards */
+.card-sobre {
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  background: linear-gradient(to bottom right, #ecfeff, #cffafe);
+}
+.dark .card-sobre { 
+  border-color: rgba(6, 182, 212, 0.5); 
+  background: linear-gradient(to bottom right, rgba(2, 132, 199, 0.15), rgba(20, 184, 166, 0.15)); 
+}
+.card-header { display: flex; gap: 1rem; align-items: flex-start; }
+.icon-container {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #06b6d4, #14b8a6);
+}
+
+.icon-svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+.card-text { flex: 1; }
+.card-title { font-size: 1.5rem; margin-bottom: 0.75rem; color: #111827; }
+.dark .card-title { color: #f9fafb; }
+
+.card-paragraph { color: #374151; line-height: 1.75; margin-bottom: 1rem; }
+.dark .card-paragraph { color: #d1d5db; }
+
+/* Specific card colors */
+.card-proposito { background: linear-gradient(to bottom right, #d5f5f6, #e0f7fa); border-color: rgba(20, 184, 166, 0.3); }
+.icon-proposito { background: linear-gradient(to bottom right, #14b8a6, #06b6d4); }
+
+/* List */
+.list-sobre { padding-left: 1rem; margin-top: 0.5rem; list-style: none; }
+.list-sobre li { display: flex; gap: 0.5rem; color: #374151; }
+.dark .list-sobre li { color: #d1d5db; }
+.list-bullet { color: #06b6d4; margin-top: 0.25rem; }
+
+/* CTA */
+.cta-sobre { text-align: center; padding-top: 2rem; }
+.cta-text { font-size: 1.25rem; margin-bottom: 1.5rem; color: #4b5563; }
+.dark .cta-text { color: #d1d5db; }
+.cta-button {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background: linear-gradient(to right, #06b6d4, #14b8a6);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+}
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  background: linear-gradient(to right, #0ea5e9, #0d9488);
+}
+
+/* Footer */
+.footer {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-powered,
+.footer-made {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-powered {
+  gap: 1.5rem;
+}
+
+.footer-separator {
+  width: 1px;
+  height: 30px;
+  background: var(--border);
+  display: block;
+}
+
+.footer-text {
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+}
+
+.footer-logo {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.footer-logo:hover {
+  transform: scale(1.1);
+}
+
+.heart-icon {
+  width: 18px;
+  height: 18px;
+  color: #ef4444;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.footer-link {
+  color: #06b6d4;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.footer-link:hover {
+  color: #14b8a6;
+  text-decoration: underline;
+}
+
+.footer-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, #06b6d4, #14b8a6);
+  border-radius: 2px;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    gap: 1.5rem;
+  }
+  
+  .footer-text {
+    font-size: 0.9rem;
+  }
+}
