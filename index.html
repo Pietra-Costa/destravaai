@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destrava Aí | Pietra.dev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!--LOGO-->
+            <div class="logo-div">
+                <button class="logo-btn" onclick="scrollToSection('inicio')">
+                    <div class="logo-icon">
+                        <svg class="logo-svg" fill="currentColor" viewBox="0 0 100 100">
+                            <path d="M 65 30 Q 65 15 50 15 Q 35 15 35 30 L 35 38" fill="none" stroke="currentColor"
+                                stroke-width="8" stroke-linecap="round" />
+                            <path
+                                d="M 30 38 Q 22 38 22 46 L 22 62 Q 22 70 30 70 L 42 70 L 48 78 L 54 70 L 70 70 Q 78 70 78 62 L 78 46 Q 78 38 70 38 Z" />
+                            <circle cx="50" cy="53" r="5" fill="white" opacity="0.9" />
+                            <rect x="48" y="53" width="4" height="10" rx="1" fill="white" opacity="0.9" />
+                        </svg>
+                    </div>
+
+                    <span class="logo-text">Destrava Aí</span>
+                </button>
+
+            </div>
+
+
+            <!--Seçoes-->
+            <div class="sections">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Exemplo</a></li>
+                    <li class="start"><a href="#">Começar</a></li>
+                </ul>
+
+                <button id="theme-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!--HERO-->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
