@@ -11,7 +11,13 @@
     { "id": "dar feedback difícil", "icon": "chat_bubble", "title": "Dar Feedback" },
     { "id": "conversar sobre ciúmes", "icon": "favorite", "title": "Falar sobre Ciúmes" },
     { "id": "resolver mal-entendido", "icon": "replay", "title": "Resolver Mal-entendido" },
-    { "id": "conflito entre amigos", "icon": "handshake", "title": "Conflito de Amizade" }
+    { "id": "conflito entre amigos", "icon": "handshake", "title": "Conflito de Amizade" },
+    { "id": "pedir demissão", "icon": "work_off", "title": "Pedir Demissão" },
+    { "id": "revelar sentimentos", "icon": "volunteer_activism", "title": "Declarar Sentimentos" },
+    { "id": "confrontar mentira", "icon": "warning", "title": "Confrontar Mentira" },
+    { "id": "conversa sobre saúde mental", "icon": "psychology", "title": "Falar sobre Saúde Mental" },
+    { "id": "negociar divida", "icon": "account_balance", "title": "Negociar Dívida" },
+    { "id": "falar sobre traição", "icon": "crisis_alert", "title": "Falar sobre Traição" }
   ],
   "peopleTypes": [
     { "id": "chefe", "icon": "👔", "label": "Chefe" },
@@ -46,7 +52,7 @@
    "actions": [
     { "id": "Incluir presente simbólico", "icon": "🎁", "label": "Presente Simbólico" },
     { "id": "Escrever uma carta", "icon": "✉️", "label": "Escrever Carta" },
-    { "id": "Compor uma música", "icon": "🎵", "label": "Compor Música" },
+    { "id": "Compor uma música", "icon": "🎵", "label": "Música" },
     { "id": "Criar um poema", "icon": "📝", "label": "Criar Poema" },
     { "id": "Pedir desculpas explicitamente", "icon": "🙏", "label": "Pedir Desculpas" },
     { "id": "Ser firme", "icon": "💪", "label": "Ser Firme" },
