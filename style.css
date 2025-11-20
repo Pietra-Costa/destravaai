@@ -462,50 +462,51 @@ nav {
 /* ============================
    CONVERSATION CARDS
 ============================ */
-.cards {
+/* Grid Cards - Estilos Comuns */
+.cards, .cards-step2, .cards-step3-proximity, .cards-step4, .cards-step5, .cards-step6 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-top: 30px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto 0;
+  max-width: 1000px;
 }
 
-.cards-step2 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+.cards {
   margin-top: 30px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 900px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cards-step2, .cards-step3-proximity, .cards-step5 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cards-step4, .cards-step6 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .step2-icon {
   font-size: 48px !important;
 }
 
+/* Media Queries - Cards Responsivos */
 @media (max-width: 1024px) {
-  .cards-step2 {
+  .cards-step2, .cards-step3-proximity, .cards-step5 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .cards-step2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .cards {
+  .cards, .cards-step2, .cards-step3-proximity, .cards-step4, .cards-step5, .cards-step6 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .cards {
+  .cards, .cards-step4, .cards-step5, .cards-step6 {
+    grid-template-columns: 1fr;
+  }
+  
+  .cards-step3-proximity {
     grid-template-columns: 1fr;
   }
 }
@@ -731,23 +732,27 @@ nav {
 }
 
 /* ============================
-   STEP 1
+   STEPS - Estilos Comuns
 ============================ */
-.step1 {
-  max-width: 900px;
+.step1, .step2, .step3, .step4, .step5, .step6 {
+  max-width: 1000px;
   margin: 40px auto;
   padding: 40px 20px;
   text-align: center;
 }
 
-.step1 h2 {
+.step1 {
+  max-width: 900px;
+}
+
+.step1 h2, .step2 h2, .step3 h2, .step4 h2, .step5 h2, .step6 h2 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 10px;
   color: var(--foreground);
 }
 
-.step1 p {
+.step1 p, .step2 p, .step3 > p, .step4 p, .step5 p, .step6 p {
   font-size: 1rem;
   opacity: 0.7;
   margin-bottom: 30px;
@@ -783,53 +788,14 @@ nav {
 }
 
 /* ============================
-   STEP 2
+   STEP 2, 3, 4, 5, 6 - Display None
 ============================ */
-.step2 {
+.step2, .step3, .step4, .step5, .step6 {
   display: none;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.step2 h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--foreground);
-}
-
-.step2 p {
-  font-size: 1rem;
-  opacity: 0.7;
-  margin-bottom: 30px;
-  color: var(--foreground);
-}
-
-/* ============================
-   STEP 3
-============================ */
-.step3 {
-  display: none;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.step3 h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--foreground);
 }
 
 .step3 > p {
-  font-size: 1rem;
-  opacity: 0.7;
   margin-bottom: 40px;
-  color: var(--foreground);
 }
 
 .step3-section {
@@ -843,62 +809,12 @@ nav {
   color: var(--foreground);
 }
 
-.cards-step3-proximity {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-@media (max-width: 1024px) {
-  .cards-step3-proximity {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .cards-step3-proximity {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ============================
    STEP 4
 ============================ */
-.step4 {
-  display: none;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 40px 20px;
-  text-align: center;
-}
 
-.step4 h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--foreground);
-}
-
-.step4 p {
-  font-size: 1rem;
-  opacity: 0.7;
-  margin-bottom: 30px;
-  color: var(--foreground);
-}
-
-.cards-step4 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .step4-card .step5-card-desc {
   font-size: 0.8rem;
@@ -906,52 +822,11 @@ nav {
   margin-top: 4px;
 }
 
-@media (max-width: 768px) {
-  .cards-step4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .cards-step4 {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ============================
    STEP 5
 ============================ */
-.step5 {
-  display: none;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 40px 20px;
-  text-align: center;
-}
 
-.step5 h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--foreground);
-}
-
-.step5 p {
-  font-size: 1rem;
-  opacity: 0.7;
-  margin-bottom: 30px;
-  color: var(--foreground);
-}
-
-.cards-step5 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .step5-card-time {
   font-size: 0.85rem;
@@ -965,52 +840,11 @@ nav {
   margin-top: 4px;
 }
 
-@media (max-width: 768px) {
-  .cards-step5 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .cards-step5 {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ============================
    STEP 6
 ============================ */
-.step6 {
-  display: none;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 40px 20px;
-  text-align: center;
-}
 
-.step6 h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: var(--foreground);
-}
-
-.step6 p {
-  font-size: 1rem;
-  opacity: 0.7;
-  margin-bottom: 30px;
-  color: var(--foreground);
-}
-
-.cards-step6 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .step6-card {
   position: relative;
@@ -1034,17 +868,6 @@ nav {
   ) !important;
 }
 
-@media (max-width: 768px) {
-  .cards-step6 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .cards-step6 {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ============================
    NAVIGATION BUTTONS
