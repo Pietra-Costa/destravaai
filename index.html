@@ -107,7 +107,7 @@
                         <input type="text" class="hero-input" id="heroInput"
                             placeholder="Qual conversa você quer destravar?" />
 
-                        <button class="hero-submit" id="heroSubmit">
+                        <button type="button" class="hero-submit" id="heroSubmit" aria-label="Buscar conversa">
                             <svg viewBox="0 0 24 24" class="hero-submit-icon">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -172,7 +172,7 @@
             <h2>Qual conversa você quer destravar?</h2>
             <p>Digite ou escolha uma das opções abaixo</p>
 
-            <input type="text" class="hero-input" id="heroInput" placeholder="Qual conversa você quer destravar?" />
+            <input type="text" class="hero-input" id="step1Input" placeholder="Qual conversa você quer destravar?" />
 
             <div class="cards"></div>
 
@@ -180,7 +180,7 @@
 
         <!--STEP 2-->
 
-        <section class="step2" style="display: none;">
+        <section class="step2">
             <h2>Com quem você vai conversar?</h2>
             <p>O tipo de relacionamento influencia a abordagem</p>
 
@@ -192,7 +192,7 @@
         <!--STEP 3-->
 
 
-        <section class="step3" style="display: none;">
+        <section class="step3">
             <h2>Contexto da Conversa</h2>
             <p>Entenda a proximidade e onde a conversa acontecerá</p>
 
@@ -201,10 +201,6 @@
                 <div class="cards-step3-proximity"></div>
             </div>
 
-            <div class="step3-section">
-                <h3 class="step3-subtitle">Onde será a conversa?</h3>
-                <div class="cards-step3-place"></div>
-            </div>
         </section>
 
         <!--STEP 4-->
@@ -227,15 +223,76 @@
 
         </section>
 
-         <!--STEP 6-->
+        <!--STEP 6-->
 
-         <section class="step6" style="display: none;">
-             <h2>Personalize ainda mais</h2>
-             <p>Selecione elementos extras que quer incluir (opcional)</p>
+        <section class="step6" style="display: none;">
+            <h2>Personalize ainda mais</h2>
+            <p>Selecione elementos extras que quer incluir (opcional)</p>
 
-             <div class="cards-step6"></div>
+            <div class="cards-step6"></div>
 
          </section>
+
+         <div id="results" class="container" style="display: none;">
+
+            <!-- Header -->
+            <div class="header no-print">
+                <div class="icon-wrapper">
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2>Conversa Destravada!</h2>
+                <p>Aqui está seu roteiro personalizado. Use como guia durante a conversa.</p>
+            </div>
+
+            <!-- Print Header -->
+            <div class="print-header print-only">
+                <h1>🔓 Destrava Aí</h1>
+                <h2>Seu Roteiro Personalizado</h2>
+                <p id="print-date"></p>
+            </div>
+
+            <div class="frase-pronta">
+                <div class="bg-effect top"></div>
+                <div class="bg-effect bottom"></div>
+                <h3>Como Começar</h3>
+                <div class="quote" id="frasePronta"></div>
+            </div>
+
+            <div class="roteiro" id="roteiroContainer">
+            </div>
+
+            <div class="info-sections">
+                <div class="section sentimentos">
+                    <h3>Emoções Envolvidas</h3>
+                    <p id="sentimentos"></p>
+                </div>
+                <div class="section evitar">
+                    <h3>Armadilhas para Evitar</h3>
+                    <ul id="evitarList"></ul>
+                </div>
+                <div class="section finalizar">
+                    <h3>Como Finalizar</h3>
+                    <p id="finalizar"></p>
+                </div>
+            </div>
+
+            <div id="extrasContainer">
+            </div>
+
+            <div class="action-buttons">
+                <button id="newConversation">Destravar Outra Conversa</button>
+                <button id="printButton">
+                    Imprimir Guia
+                    <svg class="print-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
 
 
         <div class="form-navigation">
@@ -255,6 +312,9 @@
 
     </form>
 
+
+
+    <script src="generators.js"></script>
     <script src="script.js"></script>
 </body>
 

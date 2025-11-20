@@ -19,10 +19,8 @@ const options = [
     { id: 'conflito entre amigos', icon: '<span class="material-symbols-outlined">handshake</span>', title: 'Conflito de Amizade' },
   ];
 
-// Carregar dados do JSON
 let peopleTypesData = [];
 let proximityLevelData = [];
-let conversationPlaceData = [];
 let conversationToneData = [];
 let conversationLengthData = [];
 let actionsData = [];
@@ -34,89 +32,20 @@ async function loadData() {
     
     peopleTypesData = data.peopleTypes || [];
     proximityLevelData = data.proximityLevel || [];
-    conversationPlaceData = data.conversationPlace || [];
     conversationToneData = data.conversationTone || [];
     conversationLengthData = data.conversationLength || [];
     actionsData = data.actions || [];
     
     renderStep2Cards();
     renderStep3ProximityCards();
-    renderStep3PlaceCards();
     renderStep4Cards();
     renderStep5Cards();
     renderStep6Cards();
   } catch (error) {
     console.error('Erro ao carregar dados:', error);
-    // Fallback com dados padrão
-    peopleTypesData = [
-      { id: "chefe", icon: "👔", label: "Chefe" },
-      { id: "colega", icon: "🤝", label: "Colega de Trabalho" },
-      { id: "amigo", icon: "👥", label: "Amigo Próximo" },
-      { id: "conhecido", icon: "👋", label: "Conhecido" },
-      { id: "parente", icon: "👪", label: "Parente" },
-      { id: "irmao", icon: "🧑‍🤝‍🧑", label: "Irmão/Irmã" },
-      { id: "pais", icon: "👨‍👩‍👦", label: "Pai/Mãe" },
-      { id: "parceiro", icon: "💕", label: "Crush/Parceiro" }
-    ];
-    
-    proximityLevelData = [
-      { id: "muito", label: "Muito Próximo", icon: "❤️" },
-      { id: "medio", label: "Mediano", icon: "🤗" },
-      { id: "pouco", label: "Pouco Próximo", icon: "🙂" },
-      { id: "desconhecido", label: "Quase Desconhecido", icon: "😐" }
-    ];
-    
-    conversationPlaceData = [
-      { id: "trabalho", label: "Trabalho", icon: "💼" },
-      { id: "familia", label: "Família", icon: "🏠" },
-      { id: "escola", label: "Escola", icon: "🎓" },
-      { id: "relacionamento", label: "Relacionamento", icon: "💑" },
-      { id: "amizade", label: "Amizade", icon: "🤝" },
-      { id: "online", label: "Online", icon: "💻" },
-      { id: "publico", label: "Público", icon: "🌍" }
-    ];
-    
-    conversationToneData = [
-      { id: "formal", label: "Formal", icon: "🎩", desc: "Profissional e respeitoso" },
-      { id: "semi-formal", label: "Semi-formal", icon: "👔", desc: "Equilibrado e educado" },
-      { id: "descontraído", label: "Descontraído", icon: "😊", desc: "Leve e amigável" },
-      { id: "emocional", label: "Emocional", icon: "💙", desc: "Vulnerável e profundo" },
-      { id: "direto", label: "Direto", icon: "🎯", desc: "Objetivo e claro" },
-      { id: "suave", label: "Suave", icon: "🌸", desc: "Gentil e cuidadoso" }
-    ];
-    
-    conversationLengthData = [
-      { id: "muito curta", label: "Muito Curta", icon: "⚡", time: "1-2 min", desc: "Rápida e direta" },
-      { id: "curta", label: "Curta", icon: "🏃", time: "3-5 min", desc: "Objetiva e clara" },
-      { id: "média", label: "Média", icon: "🚶", time: "5-10 min", desc: "Equilibrada" },
-      { id: "longa", label: "Longa", icon: "🧘", time: "10+ min", desc: "Profunda e detalhada" }
-    ];
-    
-    actionsData = [
-      { id: "Incluir presente simbólico", icon: "🎁", label: "Presente Simbólico" },
-      { id: "Escrever uma carta", icon: "✉️", label: "Escrever Carta" },
-      { id: "Compor uma música", icon: "🎵", label: "Compor Música" },
-      { id: "Criar um poema", icon: "📝", label: "Criar Poema" },
-      { id: "Pedir desculpas explicitamente", icon: "🙏", label: "Pedir Desculpas" },
-      { id: "Ser firme", icon: "💪", label: "Ser Firme" },
-      { id: "Ser gentil", icon: "🌸", label: "Ser Gentil" },
-      { id: "Evitar conflito", icon: "☮️", label: "Evitar Conflito" },
-      { id: "Dar espaço para resposta", icon: "🎤", label: "Espaço p/ Resposta" },
-      { id: "Incluir abraço", icon: "🤗", label: "Incluir Abraço" },
-      { id: "Oferecer ajuda prática", icon: "🤝", label: "Oferecer Ajuda" },
-      { id: "Marcar próximo encontro", icon: "📅", label: "Próximo Encontro" }
-    ];
-    
-    renderStep2Cards();
-    renderStep3ProximityCards();
-    renderStep3PlaceCards();
-    renderStep4Cards();
-    renderStep5Cards();
-    renderStep6Cards();
   }
 }
 
-// Carregar dados quando a página carregar
 loadData();
 
   const input = document.getElementById("heroInput");
@@ -127,7 +56,6 @@ loadData();
 
   let isOpen = false;
 
-  // Renderiza opções
   function renderDropdown(list) {
     grid.innerHTML = "";
     list.forEach(option => {
@@ -142,8 +70,6 @@ loadData();
 
       btn.addEventListener("click", () => {
         input.value = option.title;
-        
-        // Sincronizar com step1
         const step1Input = document.querySelector('.step1 .hero-input');
         if (step1Input) {
           step1Input.value = option.title;
@@ -152,8 +78,14 @@ loadData();
           }
         }
         
+        setTimeout(() => {
+          if (typeof updateNextButton === 'function') {
+            updateNextButton();
+          }
+        }, 100);
+        
         closeDropdown();
-        document.getElementById("ferramenta")?.scrollIntoView({ behavior: "smooth" });
+        document.querySelector('.step1')?.scrollIntoView({ behavior: "smooth" });
       });
 
       grid.appendChild(btn);
@@ -162,12 +94,10 @@ loadData();
 
   renderDropdown(options);
 
-  // Abre dropdown ao focar
   input.addEventListener("focus", () => {
     openDropdown();
   });
 
-  // Filtra
   input.addEventListener("input", () => {
     const value = input.value.toLowerCase();
     const filtered = options.filter(o =>
@@ -177,23 +107,49 @@ loadData();
     openDropdown();
   });
 
-  // Enter para ir à ferramenta
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && input.value.trim()) {
+      const step1Input = document.querySelector('.step1 .hero-input');
+      if (step1Input) {
+        step1Input.value = input.value;
+        if (typeof renderCards === 'function') {
+          renderCards(input.value);
+        }
+      }
+      
+      setTimeout(() => {
+        if (typeof updateNextButton === 'function') {
+          updateNextButton();
+        }
+      }, 100);
+      
       closeDropdown();
-      document.getElementById("ferramenta")?.scrollIntoView({ behavior: "smooth" });
+      document.querySelector('.step1')?.scrollIntoView({ behavior: "smooth" });
     }
     if (e.key === "Escape") closeDropdown();
   });
 
-  // Botão de submit
   submit.addEventListener("click", () => {
     if (!input.value.trim()) return;
+    
+    const step1Input = document.querySelector('.step1 .hero-input');
+    if (step1Input) {
+      step1Input.value = input.value;
+      if (typeof renderCards === 'function') {
+        renderCards(input.value);
+      }
+    }
+    
+    setTimeout(() => {
+      if (typeof updateNextButton === 'function') {
+        updateNextButton();
+      }
+    }, 100);
+    
     closeDropdown();
-    document.getElementById("ferramenta")?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector('.step1')?.scrollIntoView({ behavior: "smooth" });
   });
 
-  // Abrir / fechar
   function openDropdown() {
     dropdown.classList.add("open");
     isOpen = true;
@@ -214,7 +170,6 @@ let currentStep = 1;
 let selectedCard = null;
 let selectedStep2Card = null;
 let selectedProximityCard = null;
-let selectedPlaceCard = null;
 let selectedToneCard = null;
 let selectedLengthCard = null;
 let selectedExtras = [];
@@ -259,8 +214,7 @@ function showStep(stepNumber) {
   }
   
   if (nextBtn) {
-    const nextBtnText = stepNumber === totalSteps ? 'Finalizar' : 'Próximo';
-    // Manter o SVG se houver
+    const nextBtnText = stepNumber === totalSteps ? 'Destrava Aí' : 'Próximo';
     const svg = nextBtn.querySelector('svg');
     if (svg) {
       nextBtn.innerHTML = nextBtnText;
@@ -291,27 +245,20 @@ function updateNextButton() {
   if (currentStep === 1) {
     hasSelection = selectedCard !== null;
   } else if (currentStep === 2) {
-    // Verificar se há card selecionado no step 2
     const step2Selected = document.querySelector('.step2-card.selected');
     hasSelection = step2Selected !== null;
   } else if (currentStep === 3) {
-    // Verificar se ambos os cards do step 3 foram selecionados
-    hasSelection = selectedProximityCard !== null && selectedPlaceCard !== null;
+    hasSelection = selectedProximityCard !== null;
   } else if (currentStep === 4) {
-    // Verificar se há tom selecionado
     hasSelection = selectedToneCard !== null;
   } else if (currentStep === 5) {
-    // Verificar se há duração selecionada
     hasSelection = selectedLengthCard !== null;
   } else if (currentStep === 6) {
-    // Step 6 é opcional, sempre pode avançar
     hasSelection = true;
   } else {
-    // Para outros steps, permitir avançar
     hasSelection = true;
   }
   
-  // Atualizar estado do botão
   if (hasSelection) {
     nextBtn.disabled = false;
     nextBtn.classList.remove('disabled');
@@ -323,8 +270,12 @@ function updateNextButton() {
 
 if (nextBtn) {
   nextBtn.addEventListener('click', () => {
+    console.log('Botão clicado. Step atual:', currentStep, 'Total steps:', totalSteps);
     if (currentStep < totalSteps && !nextBtn.disabled) {
       showStep(currentStep + 1);
+    } else if (currentStep === totalSteps && !nextBtn.disabled) {
+      console.log('Gerando resultados...');
+      generateResults();
     }
   });
 }
@@ -337,7 +288,6 @@ if (backBtn) {
   });
 }
 
-// Renderizar cards de conversas
 const cardsContainer = document.querySelector('.cards');
 const step1Input = document.querySelector('.step1 .hero-input');
 
@@ -349,7 +299,6 @@ function renderCards(filterText = '') {
   let hasResults = false;
   
   options.forEach(item => {
-    // Filtrar por texto
     if (filter && !item.title.toLowerCase().includes(filter)) {
       return;
     }
@@ -360,7 +309,6 @@ function renderCards(filterText = '') {
     card.className = 'conversation-card';
     card.dataset.id = item.id;
     
-    // Se o título do card corresponde exatamente ao input, seleciona
     if (step1Input && item.title.toLowerCase() === step1Input.value.toLowerCase().trim()) {
       card.classList.add('selected');
       selectedCard = card;
@@ -376,46 +324,37 @@ function renderCards(filterText = '') {
     card.addEventListener('click', () => {
       const allCards = cardsContainer.querySelectorAll('.conversation-card');
       
-      // Se já está selecionado, desseleciona
       if (selectedCard === card) {
         card.classList.remove('selected');
         selectedCard = null;
         
-        // Limpa o input
         if (step1Input) {
           step1Input.value = '';
         }
         
-        // Mostra todos os cards novamente
         allCards.forEach(c => {
           c.classList.remove('hidden');
         });
         
-        // Atualiza botão próximo
         updateNextButton();
       } else {
-        // Remove seleção anterior
         if (selectedCard) {
           selectedCard.classList.remove('selected');
         }
         
-        // Seleciona o card atual
         card.classList.add('selected');
         selectedCard = card;
         
-        // Preenche o input
         if (step1Input) {
           step1Input.value = item.title;
         }
         
-        // Ocultar outros cards
         allCards.forEach(c => {
           if (c !== card) {
             c.classList.add('hidden');
           }
         });
         
-        // Atualiza botão próximo
         updateNextButton();
       }
     });
@@ -423,7 +362,6 @@ function renderCards(filterText = '') {
     cardsContainer.appendChild(card);
   });
   
-  // Mostrar mensagem se não encontrar resultados
   if (!hasResults && filter) {
     const noResults = document.createElement('div');
     noResults.className = 'no-results';
@@ -432,22 +370,17 @@ function renderCards(filterText = '') {
   }
 }
 
-// Renderizar cards inicialmente
 renderCards();
 
-// Filtrar cards ao digitar no input do step1
 if (step1Input) {
   step1Input.addEventListener('input', (e) => {
-    // Limpar seleção quando começar a digitar
     selectedCard = null;
     renderCards(e.target.value);
     
-    // Atualiza botão próximo
     updateNextButton();
   });
 }
 
-// Renderizar cards do step 2
 function renderStep2Cards() {
   const cardsContainer = document.querySelector('.cards-step2');
   if (!cardsContainer || !peopleTypesData.length) return;
@@ -467,32 +400,26 @@ function renderStep2Cards() {
     card.addEventListener('click', () => {
       const allCards = cardsContainer.querySelectorAll('.step2-card');
       
-      // Se já está selecionado, desseleciona
       if (selectedStep2Card === card) {
         card.classList.remove('selected');
         selectedStep2Card = null;
         allCards.forEach(c => c.classList.remove('hidden'));
         
-        // Atualiza botão próximo
         updateNextButton();
       } else {
-        // Remove seleção anterior
         if (selectedStep2Card) {
           selectedStep2Card.classList.remove('selected');
         }
         
-        // Seleciona o card atual
         card.classList.add('selected');
         selectedStep2Card = card;
         
-        // Ocultar outros cards
         allCards.forEach(c => {
           if (c !== card) {
             c.classList.add('hidden');
           }
         });
         
-        // Atualiza botão próximo
         updateNextButton();
       }
     });
@@ -501,7 +428,6 @@ function renderStep2Cards() {
   });
 }
 
-// Renderizar cards do step 3 - Nível de Proximidade
 function renderStep3ProximityCards() {
   const cardsContainer = document.querySelector('.cards-step3-proximity');
   if (!cardsContainer || !proximityLevelData.length) return;
@@ -548,54 +474,6 @@ function renderStep3ProximityCards() {
   });
 }
 
-// Renderizar cards do step 3 - Local da Conversa
-function renderStep3PlaceCards() {
-  const cardsContainer = document.querySelector('.cards-step3-place');
-  if (!cardsContainer || !conversationPlaceData.length) return;
-  
-  cardsContainer.innerHTML = '';
-  
-  conversationPlaceData.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'conversation-card step3-card step3-place-card';
-    card.dataset.id = item.id;
-    
-    card.innerHTML = `
-      <div class="conversation-card-icon step2-icon">${item.icon}</div>
-      <div class="conversation-card-title">${item.label}</div>
-    `;
-    
-    card.addEventListener('click', () => {
-      const allCards = cardsContainer.querySelectorAll('.step3-place-card');
-      
-      if (selectedPlaceCard === card) {
-        card.classList.remove('selected');
-        selectedPlaceCard = null;
-        allCards.forEach(c => c.classList.remove('hidden'));
-        updateNextButton();
-      } else {
-        if (selectedPlaceCard) {
-          selectedPlaceCard.classList.remove('selected');
-        }
-        
-        card.classList.add('selected');
-        selectedPlaceCard = card;
-        
-        allCards.forEach(c => {
-          if (c !== card) {
-            c.classList.add('hidden');
-          }
-        });
-        
-        updateNextButton();
-      }
-    });
-    
-    cardsContainer.appendChild(card);
-  });
-}
-
-// Renderizar cards do step 4 - Tom da Conversa
 function renderStep4Cards() {
   const cardsContainer = document.querySelector('.cards-step4');
   if (!cardsContainer || !conversationToneData.length) return;
@@ -643,7 +521,6 @@ function renderStep4Cards() {
   });
 }
 
-// Renderizar cards do step 5 - Duração da Conversa
 function renderStep5Cards() {
   const cardsContainer = document.querySelector('.cards-step5');
   if (!cardsContainer || !conversationLengthData.length) return;
@@ -692,7 +569,6 @@ function renderStep5Cards() {
   });
 }
 
-// Renderizar cards do step 6 - Extras (múltipla seleção)
 function renderStep6Cards() {
   const cardsContainer = document.querySelector('.cards-step6');
   if (!cardsContainer || !actionsData.length) return;
@@ -710,15 +586,12 @@ function renderStep6Cards() {
     `;
     
     card.addEventListener('click', () => {
-      // Step 6 permite múltipla seleção
       const index = selectedExtras.findIndex(c => c === card);
       
       if (index > -1) {
-        // Já está selecionado, remover
         card.classList.remove('selected');
         selectedExtras.splice(index, 1);
       } else {
-        // Adicionar à seleção
         card.classList.add('selected');
         selectedExtras.push(card);
       }
@@ -730,9 +603,144 @@ function renderStep6Cards() {
   });
 }
 
-// Renderizar cards do step2 quando os dados forem carregados
-// A função será chamada automaticamente quando loadData() completar
 
-// Inicializar a aplicação
 showStep(1);
 
+function getUserChoices() {
+  return {
+    conversationType: selectedCard ? selectedCard.dataset.id : null,
+    personType: selectedStep2Card ? selectedStep2Card.dataset.id : null,
+    proximity: selectedProximityCard ? selectedProximityCard.dataset.id : null,
+    tone: selectedToneCard ? selectedToneCard.dataset.id : null,
+    length: selectedLengthCard ? selectedLengthCard.dataset.id : null,
+    extras: selectedExtras.map(card => card.dataset.id)
+  };
+}
+
+function generateResults() {
+  console.log('Função generateResults executada!');
+  const choices = getUserChoices();
+  console.log('Escolhas do usuário:', choices);
+  
+  document.querySelectorAll('section[class^="step"]').forEach(section => {
+    section.style.display = 'none';
+  });
+  
+  const timeline = document.querySelector('.timeline-container');
+  const navigation = document.querySelector('.form-navigation');
+  
+  if (timeline) timeline.style.display = 'none';
+  if (navigation) navigation.style.display = 'none';
+  
+  const resultsSection = document.getElementById('results');
+  console.log('Seção de resultados:', resultsSection);
+  
+  if (resultsSection) {
+    resultsSection.style.display = 'block';
+    console.log('Seção de resultados mostrada!');
+  } else {
+    console.error('Seção de resultados não encontrada!');
+  }
+  
+  document.getElementById('print-date').innerText = `Gerado em ${new Date().toLocaleDateString('pt-BR')}`;
+  
+  document.getElementById('frasePronta').innerText = generateFrase(choices);
+  
+  document.getElementById('sentimentos').innerText = generateSentimentos(choices);
+  
+  document.getElementById('finalizar').innerText = generateFinalizar(choices);
+  
+  const evitarList = document.getElementById('evitarList');
+  evitarList.innerHTML = '';
+  generateEvitar(choices).forEach(item => {
+    const li = document.createElement('li');
+    li.innerHTML = `✗ ${item}`;
+    evitarList.appendChild(li);
+  });
+  
+  const roteiroContainer = document.getElementById('roteiroContainer');
+  if (roteiroContainer) {
+    roteiroContainer.innerHTML = '<h3>Passo a Passo</h3>';
+    generateRoteiro(choices).forEach((passo, i) => {
+      const stepDetails = getStepDetails(i);
+      const tipsHtml = stepDetails.tips.map(tip => `<p>${tip}</p>`).join('');
+      
+      const step = document.createElement('div');
+      step.className = 'step-item accordion-item';
+      step.innerHTML = `
+        <div class="step-header accordion-header">
+          <div class="step-number">${i+1}</div>
+          <div class="step-title">${passo}</div>
+        </div>
+        <div class="step-content accordion-content">
+          ${tipsHtml}
+        </div>
+      `;
+      roteiroContainer.appendChild(step);
+    });
+  }
+  
+  const extrasContainer = document.getElementById('extrasContainer');
+  if (extrasContainer) {
+    extrasContainer.innerHTML = '';
+  }
+  
+  if (choices.extras && choices.extras.length > 0 && extrasContainer) {
+    choices.extras.forEach(extraId => {
+      const div = document.createElement('div');
+      div.className = 'extra';
+      
+      let tipo = '';
+      let conteudo = '';
+      
+      if (extraId.toLowerCase().includes('carta')) {
+        tipo = '✉️ Carta Personalizada';
+        conteudo = gerarCarta(choices);
+      } else if (extraId.toLowerCase().includes('poema')) {
+        tipo = '📝 Poema';
+        conteudo = gerarPoema(choices);
+      } else if (extraId.toLowerCase().includes('música') || extraId.toLowerCase().includes('musica')) {
+        tipo = '🎵 Música';
+        conteudo = gerarMusica(choices);
+      } else {
+        tipo = `🎁 ${extraId}`;
+        conteudo = gerarDicaExtra(extraId, choices);
+      }
+      
+      div.innerHTML = `
+        <div class="extra-header">${tipo}</div>
+        <div class="extra-content">${conteudo}</div>
+      `;
+      extrasContainer.appendChild(div);
+    });
+  }
+  
+  setTimeout(() => {
+    document.querySelectorAll('.accordion-header, .step-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        if (content && (content.classList.contains('accordion-content') || content.classList.contains('step-content'))) {
+          const isOpen = content.style.display === 'block';
+          content.style.display = isOpen ? 'none' : 'block';
+          header.classList.toggle('open', !isOpen);
+        }
+      });
+    });
+    
+    document.querySelectorAll('.extra-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        if (content && content.classList.contains('extra-content')) {
+          const isOpen = content.style.display === 'block';
+          content.style.display = isOpen ? 'none' : 'block';
+          header.classList.toggle('open', !isOpen);
+        }
+      });
+    });
+  }, 100);
+  
+  document.getElementById('printButton').addEventListener('click', () => window.print());
+  document.getElementById('newConversation').addEventListener('click', () => location.reload());
+  
+  resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
