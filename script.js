@@ -393,7 +393,7 @@ function renderStep2Cards() {
     card.dataset.id = item.id;
     
     card.innerHTML = `
-      <div class="conversation-card-icon step2-icon">${item.icon}</div>
+      <div class="conversation-card-icon step2-icon"><span class="material-symbols-outlined">${item.icon}</span></div>
       <div class="conversation-card-title">${item.label}</div>
     `;
     
@@ -440,7 +440,7 @@ function renderStep3ProximityCards() {
     card.dataset.id = item.id;
     
     card.innerHTML = `
-      <div class="conversation-card-icon step2-icon">${item.icon}</div>
+      <div class="conversation-card-icon step2-icon"><span class="material-symbols-outlined">${item.icon}</span></div>
       <div class="conversation-card-title">${item.label}</div>
     `;
     
@@ -486,7 +486,7 @@ function renderStep4Cards() {
     card.dataset.id = item.id;
     
     card.innerHTML = `
-      <div class="conversation-card-icon step2-icon">${item.icon}</div>
+      <div class="conversation-card-icon step2-icon"><span class="material-symbols-outlined">${item.icon}</span></div>
       <div class="conversation-card-title">${item.label}</div>
       ${item.desc ? `<div class="step5-card-desc">${item.desc}</div>` : ''}
     `;
@@ -533,7 +533,7 @@ function renderStep5Cards() {
     card.dataset.id = item.id;
     
     card.innerHTML = `
-      <div class="conversation-card-icon step2-icon">${item.icon}</div>
+      <div class="conversation-card-icon step2-icon"><span class="material-symbols-outlined">${item.icon}</span></div>
       <div class="conversation-card-title">${item.label}</div>
       ${item.time ? `<div class="step5-card-time">${item.time}</div>` : ''}
       ${item.desc ? `<div class="step5-card-desc">${item.desc}</div>` : ''}
@@ -581,7 +581,7 @@ function renderStep6Cards() {
     card.dataset.id = item.id;
     
     card.innerHTML = `
-      <div class="conversation-card-icon step2-icon">${item.icon}</div>
+      <div class="conversation-card-icon step2-icon"><span class="material-symbols-outlined">${item.icon}</span></div>
       <div class="conversation-card-title">${item.label}</div>
     `;
     

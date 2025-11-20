@@ -20,47 +20,47 @@
     { "id": "falar sobre traição", "icon": "crisis_alert", "title": "Falar sobre Traição" }
   ],
   "peopleTypes": [
-    { "id": "chefe", "icon": "👔", "label": "Chefe" },
-    { "id": "colega", "icon": "🤝", "label": "Colega de Trabalho" },
-    { "id": "amigo", "icon": "👥", "label": "Amigo Próximo" },
-    { "id": "conhecido", "icon": "👋", "label": "Conhecido" },
-    { "id": "parente", "icon": "👪", "label": "Parente" },
-    { "id": "irmao", "icon": "🧑‍🤝‍🧑", "label": "Irmão/Irmã" },
-    { "id": "pais", "icon": "👨‍👩‍👦", "label": "Pai/Mãe" },
-    { "id": "parceiro", "icon": "💕", "label": "Crush/Parceiro" }
+    { "id": "chefe", "icon": "work", "label": "Chefe" },
+    { "id": "colega", "icon": "handshake", "label": "Colega de Trabalho" },
+    { "id": "amigo", "icon": "group", "label": "Amigo Próximo" },
+    { "id": "conhecido", "icon": "waving_hand", "label": "Conhecido" },
+    { "id": "parente", "icon": "family_restroom", "label": "Parente" },
+    { "id": "irmao", "icon": "diversity_3", "label": "Irmão/Irmã" },
+    { "id": "pais", "icon": "escalator_warning", "label": "Pai/Mãe" },
+    { "id": "parceiro", "icon": "favorite", "label": "Crush/Parceiro" }
   ],
   "proximityLevel": [
-    { "id": "muito", "label": "Muito Próximo", "icon": "❤️" },
-    { "id": "medio", "label": "Mediano", "icon": "🤗" },
-    { "id": "pouco", "label": "Pouco Próximo", "icon": "🙂" },
-    { "id": "desconhecido", "label": "Quase Desconhecido", "icon": "😐" }
+    { "id": "muito", "label": "Muito Próximo", "icon": "favorite" },
+    { "id": "medio", "label": "Mediano", "icon": "add_reaction" },
+    { "id": "pouco", "label": "Pouco Próximo", "icon": "sentiment_satisfied" },
+    { "id": "desconhecido", "label": "Quase Desconhecido", "icon": "sentiment_neutral" }
   ],
   "conversationTone": [
-    { "id": "formal", "label": "Formal", "icon": "🎩", "desc": "Profissional e respeitoso" },
-    { "id": "semi-formal", "label": "Semi-formal", "icon": "👔", "desc": "Equilibrado e educado" },
-    { "id": "descontraído", "label": "Descontraído", "icon": "😊", "desc": "Leve e amigável" },
-    { "id": "emocional", "label": "Emocional", "icon": "💙", "desc": "Vulnerável e profundo" },
-    { "id": "direto", "label": "Direto", "icon": "🎯", "desc": "Objetivo e claro" },
-    { "id": "suave", "label": "Suave", "icon": "🌸", "desc": "Gentil e cuidadoso" }
+    { "id": "formal", "label": "Formal", "icon": "cognition", "desc": "Profissional e respeitoso" },
+    { "id": "semi-formal", "label": "Semi-formal", "icon": "business_center", "desc": "Equilibrado e educado" },
+    { "id": "descontraído", "label": "Descontraído", "icon": "mood", "desc": "Leve e amigável" },
+    { "id": "emocional", "label": "Emocional", "icon": "emoji_emotions", "desc": "Vulnerável e profundo" },
+    { "id": "direto", "label": "Direto", "icon": "crisis_alert", "desc": "Objetivo e claro" },
+    { "id": "suave", "label": "Suave", "icon": "spa", "desc": "Gentil e cuidadoso" }
   ],
    "conversationLength": [
-    { "id": "muito curta", "label": "Muito Curta", "icon": "⚡", "time": "1-2 min", "desc": "Rápida e direta" },
-    { "id": "curta", "label": "Curta", "icon": "🏃", "time": "3-5 min", "desc": "Objetiva e clara" },
-    { "id": "média", "label": "Média", "icon": "🚶", "time": "5-10 min", "desc": "Equilibrada" },
-    { "id": "longa", "label": "Longa", "icon": "🧘", "time": "10+ min", "desc": "Profunda e detalhada" }
+    { "id": "muito curta", "label": "Muito Curta", "icon": "bolt", "time": "1-2 min", "desc": "Rápida e direta" },
+    { "id": "curta", "label": "Curta", "icon": "directions_run", "time": "3-5 min", "desc": "Objetiva e clara" },
+    { "id": "média", "label": "Média", "icon": "directions_walk", "time": "5-10 min", "desc": "Equilibrada" },
+    { "id": "longa", "label": "Longa", "icon": "self_improvement", "time": "10+ min", "desc": "Profunda e detalhada" }
   ],
    "actions": [
-    { "id": "Incluir presente simbólico", "icon": "🎁", "label": "Presente Simbólico" },
-    { "id": "Escrever uma carta", "icon": "✉️", "label": "Escrever Carta" },
-    { "id": "Compor uma música", "icon": "🎵", "label": "Música" },
-    { "id": "Criar um poema", "icon": "📝", "label": "Criar Poema" },
-    { "id": "Pedir desculpas explicitamente", "icon": "🙏", "label": "Pedir Desculpas" },
-    { "id": "Ser firme", "icon": "💪", "label": "Ser Firme" },
-    { "id": "Ser gentil", "icon": "🌸", "label": "Ser Gentil" },
-    { "id": "Evitar conflito", "icon": "☮️", "label": "Evitar Conflito" },
-    { "id": "Dar espaço para resposta", "icon": "🎤", "label": "Espaço p/ Resposta" },
-    { "id": "Incluir abraço", "icon": "🤗", "label": "Incluir Abraço" },
-    { "id": "Oferecer ajuda prática", "icon": "🤝", "label": "Oferecer Ajuda" },
-    { "id": "Marcar próximo encontro", "icon": "📅", "label": "Próximo Encontro" }
+    { "id": "Incluir presente simbólico", "icon": "redeem", "label": "Presente Simbólico" },
+    { "id": "Escrever uma carta", "icon": "mail", "label": "Escrever Carta" },
+    { "id": "Compor uma música", "icon": "music_note", "label": "Música" },
+    { "id": "Criar um poema", "icon": "edit_note", "label": "Criar Poema" },
+    { "id": "Pedir desculpas explicitamente", "icon": "prayer_times", "label": "Pedir Desculpas" },
+    { "id": "Ser firme", "icon": "fitness_center", "label": "Ser Firme" },
+    { "id": "Ser gentil", "icon": "spa", "label": "Ser Gentil" },
+    { "id": "Evitar conflito", "icon": "self_improvement", "label": "Evitar Conflito" },
+    { "id": "Dar espaço para resposta", "icon": "mic", "label": "Espaço p/ Resposta" },
+    { "id": "Incluir abraço", "icon": "breastfeeding", "label": "Incluir Abraço" },
+    { "id": "Oferecer ajuda prática", "icon": "handshake", "label": "Oferecer Ajuda" },
+    { "id": "Marcar próximo encontro", "icon": "calendar_month", "label": "Próximo Encontro" }
   ]
 }

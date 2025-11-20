@@ -440,12 +440,18 @@ nav {
 }
 
 .dropdown-icon .material-symbols-outlined {
-  color: #06b6d4;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 22px;
 }
 
 .dark .dropdown-icon .material-symbols-outlined {
-  color: #06b6d4;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .dropdown-text {
@@ -486,6 +492,13 @@ nav {
 
 .step2-icon {
   font-size: 48px !important;
+}
+
+.step2-icon .material-symbols-outlined {
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Media Queries - Cards Responsivos */
@@ -577,11 +590,14 @@ nav {
 
 .conversation-card-icon {
   font-size: 40px;
-  color: #06b6d4;
 }
 
 .conversation-card-icon .material-symbols-outlined {
   font-size: 40px;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .conversation-card-title {
