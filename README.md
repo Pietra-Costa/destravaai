@@ -5,7 +5,9 @@ Talvez seja pedir um aumento, terminar um relacionamento, confrontar alguém ou 
 
 **Seus problemas acabaram.** O **Destrava Aí** foi criado exatamente para isso: transformar momentos de tensão em diálogos claros, empáticos e produtivos, sem você se sentir perdido ou inseguro.
 
----
+<img width="1000" height="1000" alt="clean-browser-mockup" src="https://github.com/user-attachments/assets/94539b19-5f26-4953-8894-c1f07a495b6f" />
+
+----
 
 ## 💡 O que é o Destrava Aí?
 
@@ -31,6 +33,9 @@ O Destrava Aí não é só um site bonito. Ele é resultado de uma **imersão co
 Em outras palavras: **não é só código**, é conhecimento aplicado de forma prática, gerando uma solução útil e robusta que qualquer pessoa consegue usar imediatamente.
 
 ---
+
+<img width="1000" height="1000" alt="hand-holding-phone-mockup" src="https://github.com/user-attachments/assets/9694a4bd-e43c-424c-af49-b88325116a40" />
+
 
 ## 🎯 Para quem é o Destrava Aí
 
@@ -65,6 +70,9 @@ Abra o site, escolha o tipo de conversa e siga os passos sugeridos. Com o **Dest
 - E até tranquilo  
 
 Não é apenas tecnologia — é **confiança na ponta dos dedos**, criada a partir de uma base de conhecimento gigantesca e estruturada para resolver problemas reais.
+
+<img width="1000" height="1000" alt="standing-ipad-mockup" src="https://github.com/user-attachments/assets/b36b3b97-c06b-4797-b95a-6b75116f7717" />
+
 
 ---
 
