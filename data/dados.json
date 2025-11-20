@@ -29,15 +29,6 @@
     { "id": "pouco", "label": "Pouco Próximo", "icon": "🙂" },
     { "id": "desconhecido", "label": "Quase Desconhecido", "icon": "😐" }
   ],
-  "conversationPlace": [
-    { "id": "trabalho", "label": "Trabalho", "icon": "💼" },
-    { "id": "familia", "label": "Família", "icon": "🏠" },
-    { "id": "escola", "label": "Escola", "icon": "🎓" },
-    { "id": "relacionamento", "label": "Relacionamento", "icon": "💑" },
-    { "id": "amizade", "label": "Amizade", "icon": "🤝" },
-    { "id": "online", "label": "Online", "icon": "💻" },
-    { "id": "publico", "label": "Público", "icon": "🌍" }
-  ],
   "conversationTone": [
     { "id": "formal", "label": "Formal", "icon": "🎩", "desc": "Profissional e respeitoso" },
     { "id": "semi-formal", "label": "Semi-formal", "icon": "👔", "desc": "Equilibrado e educado" },
