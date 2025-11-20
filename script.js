@@ -662,7 +662,7 @@ function generateResults() {
   if (roteiroContainer) {
     roteiroContainer.innerHTML = '<h3>Passo a Passo</h3>';
     generateRoteiro(choices).forEach((passo, i) => {
-      const stepDetails = getStepDetails(i);
+      const stepDetails = getStepDetails(i, choices.conversationType);
       const tipsHtml = stepDetails.tips.map(tip => `<p>${tip}</p>`).join('');
       
       const step = document.createElement('div');

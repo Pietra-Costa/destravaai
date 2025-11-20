@@ -36,6 +36,55 @@ function generateRoteiro(choices) {
       "Ouça a explicação da outra pessoa",
       "Busque uma solução em conjunto"
     ],
+    'dizer não': [
+      "Prepare-se mentalmente para ser firme",
+      "Agradeça pela consideração",
+      "Decline de forma clara e educada",
+      "Não se justifique excessivamente",
+      "Mantenha sua decisão com gentileza"
+    ],
+    'falar que está magoado': [
+      "Escolha um momento calmo para conversar",
+      "Use 'eu me senti' ao invés de 'você fez'",
+      "Explique a situação específica que te magoou",
+      "Peça validação dos seus sentimentos",
+      "Busque uma resolução construtiva juntos"
+    ],
+    'colocar limites': [
+      "Defina claramente qual é o limite",
+      "Explique por que esse limite é importante",
+      "Seja firme mas respeitoso",
+      "Estabeleça consequências se necessário",
+      "Mantenha consistência ao aplicar o limite"
+    ],
+    'dar feedback difícil': [
+      "Prepare exemplos concretos",
+      "Comece reconhecendo pontos positivos",
+      "Apresente o feedback de forma clara",
+      "Ofereça suporte para melhoria",
+      "Estabeleça próximos passos juntos"
+    ],
+    'conversar sobre ciúmes': [
+      "Reconheça que é seu sentimento",
+      "Explique os gatilhos específicos",
+      "Evite acusar ou controlar",
+      "Peça reasseguramento se necessário",
+      "Trabalhem juntos na confiança"
+    ],
+    'resolver mal-entendido': [
+      "Reconheça que houve confusão",
+      "Explique sua interpretação da situação",
+      "Ouça ativamente a versão do outro",
+      "Identifiquem onde houve divergência",
+      "Alinhem entendimento para o futuro"
+    ],
+    'conflito entre amigos': [
+      "Proponha conversar com calma",
+      "Reafirme o valor da amizade",
+      "Exponham as questões com respeito",
+      "Ouçam um ao outro sem interromper",
+      "Busquem reconciliação e novos acordos"
+    ],
     default: [
       "Prepare-se mentalmente para a conversa",
       "Escolha o momento e local adequados",
@@ -45,47 +94,276 @@ function generateRoteiro(choices) {
     ]
   };
   
-  return roteiros[choices.conversationType] || roteiros.default;
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return roteiros[tipo] || roteiros.default;
 }
 
-function getStepDetails(index) {
-  const details = [
-    {
-      tips: [
-        '✓ Escolha um momento calmo, sem interrupções',
-        '✓ Respire fundo 3 vezes antes de começar',
-        '✓ Tenha clareza sobre seu objetivo principal'
-      ]
-    },
-    {
-      tips: [
-        '✓ Use "eu sinto" ao invés de "você fez"',
-        '✓ Mantenha contato visual e postura aberta',
-        '✓ Fale com calma e pausadamente'
-      ]
-    },
-    {
-      tips: [
-        '✓ Pause para deixar a pessoa processar',
-        '✓ Escute ativamente sem interromper',
-        '✓ Valide os sentimentos da outra pessoa'
-      ]
-    },
-    {
-      tips: [
-        '✓ Seja específico sobre o que você precisa',
-        '✓ Evite acusações ou generalizações',
-        '✓ Demonstre empatia e compreensão'
-      ]
-    },
-    {
-      tips: [
-        '✓ Dê espaço para resposta e diálogo',
-        '✓ Esteja preparado para ouvir críticas',
-        '✓ Mantenha-se aberto a diferentes perspectivas'
-      ]
-    }
-  ];
+function getStepDetails(index, conversationType) {
+  const tipo = conversationType ? conversationType.toLowerCase() : 'default';
+  
+  const detailsPorTipo = {
+    'pedir desculpas': [
+      {
+        tips: [
+          '✓ Evite horários de estresse ou cansaço',
+          '✓ Prepare-se emocionalmente para vulnerabilidade',
+          '✓ Tenha clareza sobre o que você fez de errado'
+        ]
+      },
+      {
+        tips: [
+          '✓ Diga "Me desculpe por [ação específica]"',
+          '✓ Não use "mas" após o pedido de desculpas',
+          '✓ Reconheça o impacto, não apenas a ação'
+        ]
+      },
+      {
+        tips: [
+          '✓ Seja honesto sobre seus sentimentos de culpa',
+          '✓ Demonstre que entende a dor causada',
+          '✓ Evite se justificar ou dar desculpas'
+        ]
+      },
+      {
+        tips: [
+          '✓ Pergunte "Como você se sentiu quando isso aconteceu?"',
+          '✓ Não minimize a dor da pessoa',
+          '✓ Valide os sentimentos expressos'
+        ]
+      },
+      {
+        tips: [
+          '✓ Proponha mudanças específicas de comportamento',
+          '✓ Pergunte "O que posso fazer para reparar?"',
+          '✓ Respeite se a pessoa precisar de tempo'
+        ]
+      }
+    ],
+    'terminar relacionamento': [
+      {
+        tips: [
+          '✓ Escolha um local privado e neutro',
+          '✓ Evite datas especiais ou momentos ruins',
+          '✓ Prepare-se para diferentes reações emocionais'
+        ]
+      },
+      {
+        tips: [
+          '✓ Seja direto: "Preciso conversar sobre nosso relacionamento"',
+          '✓ Não deixe margem para dúvidas ou esperanças',
+          '✓ Mantenha o tom respeitoso mas firme'
+        ]
+      },
+      {
+        tips: [
+          '✓ Use "eu sinto" para expressar seus motivos',
+          '✓ Seja honesto sem ser cruel',
+          '✓ Evite listar defeitos da pessoa'
+        ]
+      },
+      {
+        tips: [
+          '✓ Seja claro que a decisão é final',
+          '✓ Não diga "talvez" ou "no futuro"',
+          '✓ Evite contato físico confuso (abraços longos)'
+        ]
+      },
+      {
+        tips: [
+          '✓ Permita que a pessoa chore ou se expresse',
+          '✓ Não tente consolar demais',
+          '✓ Defina limites claros de contato futuro'
+        ]
+      }
+    ],
+    'pedir aumento': [
+      {
+        tips: [
+          '✓ Marque reunião com 1 semana de antecedência',
+          '✓ Escolha horário em que seu chefe esteja calmo',
+          '✓ Prepare documentos e evidências'
+        ]
+      },
+      {
+        tips: [
+          '✓ Liste 3-5 conquistas concretas com números',
+          '✓ Prepare documentos visuais (gráficos, relatórios)',
+          '✓ Tenha dados de salários de mercado prontos'
+        ]
+      },
+      {
+        tips: [
+          '✓ Mostre como você agregou valor à empresa',
+          '✓ Cite projetos específicos e resultados',
+          '✓ Relacione suas conquistas com objetivos da empresa'
+        ]
+      },
+      {
+        tips: [
+          '✓ Use sites como Glassdoor, Catho, LinkedIn',
+          '✓ Cite faixas salariais da sua área e senioridade',
+          '✓ Mostre que está abaixo do mercado (se for o caso)'
+        ]
+      },
+      {
+        tips: [
+          '✓ Diga o valor exato ou percentual desejado',
+          '✓ Tenha uma faixa de negociação em mente',
+          '✓ Esteja preparado para negociar benefícios'
+        ]
+      }
+    ],
+    'recusar convite': [
+      {
+        tips: [
+          '✓ Responda o mais rápido possível',
+          '✓ Seja educado mas direto',
+          '✓ Não invente desculpas mirabolantes'
+        ]
+      },
+      {
+        tips: [
+          '✓ Diga "Não vou poder ir, mas obrigado pelo convite"',
+          '✓ Seja firme mas gentil',
+          '✓ Não deixe a pessoa na expectativa'
+        ]
+      },
+      {
+        tips: [
+          '✓ Dê uma razão breve e verdadeira',
+          '✓ Não se justifique excessivamente',
+          '✓ Não minta sobre compromissos'
+        ]
+      },
+      {
+        tips: [
+          '✓ Se quiser, sugira outro momento',
+          '✓ Seja específico: "Que tal semana que vem?"',
+          '✓ Só ofereça alternativa se realmente quiser'
+        ]
+      },
+      {
+        tips: [
+          '✓ Diga "Nossa amizade é importante para mim"',
+          '✓ Agradeça novamente pelo convite',
+          '✓ Mantenha o tom positivo e carinhoso'
+        ]
+      }
+    ],
+    'falar que está magoado': [
+      {
+        tips: [
+          '✓ Espere até estar menos emocional',
+          '✓ Escolha momento privado e tranquilo',
+          '✓ Prepare-se para ser vulnerável'
+        ]
+      },
+      {
+        tips: [
+          '✓ Sempre use "Eu me senti [emoção]"',
+          '✓ Evite "Você sempre" ou "Você nunca"',
+          '✓ Descreva a situação específica, não generalize'
+        ]
+      },
+      {
+        tips: [
+          '✓ Diga exatamente o que aconteceu',
+          '✓ Use fatos, não interpretações',
+          '✓ Explique por que aquilo te afetou'
+        ]
+      },
+      {
+        tips: [
+          '✓ Pergunte "Você pode entender como me senti?"',
+          '✓ Não exija desculpas imediatas',
+          '✓ Esteja aberto para ouvir a perspectiva da pessoa'
+        ]
+      },
+      {
+        tips: [
+          '✓ Proponha como evitar no futuro',
+          '✓ Busque um acordo mútuo',
+          '✓ Reforce o valor da relação'
+        ]
+      }
+    ],
+    'colocar limites': [
+      {
+        tips: [
+          '✓ Saiba exatamente qual limite você precisa',
+          '✓ Esteja preparado para ser firme',
+          '✓ Ensaie o que vai dizer se necessário'
+        ]
+      },
+      {
+        tips: [
+          '✓ Diga "Preciso que [comportamento específico]"',
+          '✓ Seja cristalino, sem ambiguidades',
+          '✓ Use frases afirmativas, não perguntas'
+        ]
+      },
+      {
+        tips: [
+          '✓ Explique por que esse limite te afeta',
+          '✓ Use "Isso é importante para mim porque..."',
+          '✓ Mostre que não é capricho, é necessidade'
+        ]
+      },
+      {
+        tips: [
+          '✓ Seja firme mas não agressivo',
+          '✓ Mantenha contato visual e postura confiante',
+          '✓ Não peça desculpas por ter limites'
+        ]
+      },
+      {
+        tips: [
+          '✓ Diga "Se isso continuar, eu vou [consequência]"',
+          '✓ Seja realista sobre as consequências',
+          '✓ Esteja preparado para aplicá-las'
+        ]
+      }
+    ],
+    default: [
+      {
+        tips: [
+          '✓ Escolha um momento calmo, sem interrupções',
+          '✓ Respire fundo 3 vezes antes de começar',
+          '✓ Tenha clareza sobre seu objetivo principal'
+        ]
+      },
+      {
+        tips: [
+          '✓ Use "eu sinto" ao invés de "você fez"',
+          '✓ Mantenha contato visual e postura aberta',
+          '✓ Fale com calma e pausadamente'
+        ]
+      },
+      {
+        tips: [
+          '✓ Pause para deixar a pessoa processar',
+          '✓ Escute ativamente sem interromper',
+          '✓ Valide os sentimentos da outra pessoa'
+        ]
+      },
+      {
+        tips: [
+          '✓ Seja específico sobre o que você precisa',
+          '✓ Evite acusações ou generalizações',
+          '✓ Demonstre empatia e compreensão'
+        ]
+      },
+      {
+        tips: [
+          '✓ Dê espaço para resposta e diálogo',
+          '✓ Esteja preparado para ouvir críticas',
+          '✓ Mantenha-se aberto a diferentes perspectivas'
+        ]
+      }
+    ]
+  };
+  
+  const details = detailsPorTipo[tipo] || detailsPorTipo['default'];
   
   return details[index] || { 
     tips: [
@@ -103,10 +381,18 @@ function generateFrase(choices) {
     'pedir aumento': `Gostaria de agendar uma conversa para discutir minha posição e contribuição para a empresa.`,
     'recusar convite': `Obrigado(a) pelo convite! Eu realmente aprecio ter pensado em mim, mas infelizmente não vou conseguir participar desta vez.`,
     'cobrar alguém': `Oi, gostaria de conversar com você sobre algo que está me incomodando. Você tem um momento para conversarmos?`,
+    'dizer não': `Agradeço, mas preciso ser sincero(a): não vou conseguir fazer isso. Espero que você compreenda.`,
+    'falar que está magoado': `Preciso conversar com você sobre algo que me machucou. Fiquei magoado(a) quando [situação]. Podemos conversar?`,
+    'colocar limites': `Preciso ser claro(a) sobre algo: [limite específico]. Isso é importante para mim e espero que você possa respeitar.`,
+    'dar feedback difícil': `Gostaria de conversar sobre algo. Reconheço [qualidades], mas preciso te dar um feedback sobre [situação].`,
+    'conversar sobre ciúmes': `Preciso ser honesto(a) com você: tenho sentido ciúmes em relação a [situação]. Podemos conversar sobre isso?`,
+    'resolver mal-entendido': `Acho que houve um mal-entendido entre nós. Gostaria de esclarecer isso porque você é importante para mim.`,
+    'conflito entre amigos': `Nossa amizade é muito importante para mim. Precisamos conversar sobre o que está acontecendo entre nós.`,
     default: `Olá, gostaria de conversar com você sobre algo que é importante para mim. Você tem um momento?`
   };
   
-  return frases[choices.conversationType] || frases.default;
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return frases[tipo] || frases.default;
 }
 
 function generateSentimentos(choices) {
@@ -149,31 +435,221 @@ function generateFinalizar(choices) {
 }
 
 function gerarCarta(choices) {
-  return `Querido(a),
+  const cartasModelos = {
+    'pedir desculpas': `Querido(a),
 
-Escrevo esta carta porque algumas palavras são mais fáceis de expressar no papel. 
+Escrevo esta carta porque preciso expressar algo que tem pesado no meu coração. Sei que minhas ações causaram dor e desconforto, e por isso peço sinceras desculpas.
 
-${choices.conversationType === 'pedir desculpas' ? 'Quero que saiba que reconheço meu erro e sinto muito por ter te magoado.' : 'Quero compartilhar algo importante contigo.'}
+Reconheço que errei e compreendo como isso te afetou. Não há justificativa para o que aconteceu, mas quero que saiba que estou genuinamente arrependido(a).
 
-Espero que possamos conversar sobre isso em breve.
+Tenho refletido muito sobre a situação e estou trabalhando para ser uma pessoa melhor e garantir que isso não se repita.
+
+Valorizo imensamente nosso relacionamento e espero que possamos superar esse momento juntos. Se você precisar de tempo e espaço, entenderei completamente.
+
+Com carinho e respeito,
+[Seu nome]`,
+
+    'terminar relacionamento': `Querido(a),
+
+Escrevo esta carta porque acredito que algumas palavras merecem ser ditas com cuidado e atenção, mesmo quando são difíceis.
+
+Nossa jornada juntos foi significativa e guardarei com carinho os momentos que compartilhamos. No entanto, após muita reflexão, percebi que seguir caminhos separados é o mais honesto que posso fazer por nós dois.
+
+Esta decisão não diminui o valor do que vivemos. Desejo de coração que você encontre a felicidade que merece.
+
+Com respeito e consideração,
+[Seu nome]`,
+
+    'recusar convite': `Querido(a),
+
+Antes de mais nada, muito obrigado(a) pelo convite! Significa muito para mim que tenha pensado em mim.
+
+Infelizmente, não conseguirei participar desta vez. Fico realmente chateado(a) de não poder estar presente, mas espero que seja um momento incrível.
+
+Vamos marcar algo em breve? Gostaria muito de nos encontrarmos quando tiver uma oportunidade melhor.
 
 Com carinho,
-[Seu nome]`;
+[Seu nome]`,
+
+    'falar que está magoado': `Querido(a),
+
+Escrevo porque preciso compartilhar algo que tem me incomodado, e acredito que você merece saber.
+
+Recentemente, senti-me magoado(a) com [situação]. Não estou te culpando, apenas compartilhando como me senti, pois nosso relacionamento é importante para mim.
+
+Acredito que conversando podemos entender melhor um ao outro e fortalecer nossa relação.
+
+Com sinceridade,
+[Seu nome]`,
+
+    'default': `Querido(a),
+
+Sinto a necessidade de colocar no papel algo que tem estado na minha mente e no meu coração.
+
+Escrevo isso porque nosso relacionamento é importante para mim e acredito que você merece saber o que sinto.
+
+Espero que possamos conversar sobre isso quando você se sentir confortável.
+
+Com carinho,
+[Seu nome]`
+  };
+
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return cartasModelos[tipo] || cartasModelos['default'];
 }
 
 function gerarPoema(choices) {
-  return `Em palavras sinceras, meu coração revela,
-O que sinto por dentro, numa conversa singela.
-${choices.conversationType === 'pedir desculpas' ? 'Errei, reconheço, e peço perdão,' : 'É tempo de falar, abrir o coração,'}
-Com honestidade e verdadeira emoção.`;
+  const poemasModelos = {
+    'pedir desculpas': `📜 "Perdão"
+
+No silêncio da madrugada,
+Encontro as palavras perdidas.
+Errei, tropecei na jornada,
+Deixei marcas não merecidas.
+
+Se pudesse voltar atrás,
+Mudaria meu tom, minha ação.
+Mas só posso oferecer algo mais:
+Um sincero pedido de perdão.
+
+Não busco apagar o que foi feito,
+Nem pretendo que esqueças a dor.
+Apenas mostro meu peito aberto,
+E um coração cheio de amor.
+
+Que possamos, juntos, curar
+As feridas que o tempo deixou.
+E em um novo amanhecer, recomeçar
+O que por descuido se quebrou.`,
+
+    'terminar relacionamento': `📜 "Caminhos Separados"
+
+Chegou a hora que eu temia,
+De dizer adeus ao que vivíamos.
+Não por falta de amor ou carinho,
+Mas porque seguimos destinos diferentes.
+
+Guardo cada riso, cada abraço,
+Cada momento fica como um laço.
+Que mesmo partido, ainda brilha,
+Na memória de nossa história.
+
+Não há culpados nessa equação,
+Apenas dois corações em direções diferentes.
+E eu te desejo tudo de melhor,
+Um amor que te faça feliz completamente.`,
+
+    'falar que está magoado': `📜 "Mágoa Silenciosa"
+
+Guardo dentro do peito
+Uma dor que não se vê.
+Palavras que feriram direito,
+Ações que machucaram.
+
+Não é fácil expressar
+O que se sente quando dói.
+Mas preciso te contar,
+Antes que o silêncio destrói.
+
+A mágoa não é raiva,
+Nem desejo de vingança.
+É apenas uma ferida viva,
+Pedindo cuidado e mudança.
+
+Falo disso com respeito,
+Não para atacar ou culpar.
+Mas para que nosso afeto
+Possa, enfim, se restaurar.`,
+
+    'default': `📜 "Palavras do Coração"
+
+Entre o dito e o não dito,
+Existe um mar de emoções.
+Navego nesse infinito,
+Buscando as certas expressões.
+
+Não são palavras fáceis,
+Nem vêm sem receio ou dor.
+Mas são verdadeiras, reais,
+E nascem do mais puro amor.
+
+Que este momento difícil
+Seja ponte, não seja muro.
+Que o diálogo, mesmo frágil,
+Nos leve a um futuro mais puro.`
+  };
+
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return poemasModelos[tipo] || poemasModelos['default'];
 }
 
 function gerarMusica(choices) {
-  return `🎵 Sugestão de Música:
+  const musicasModelos = {
+    'pedir desculpas': `🎵 Sugestões de Músicas para Pedir Desculpas:
 
-${choices.conversationType === 'pedir desculpas' ? '"Sorry" - Justin Bieber' : choices.conversationType === 'terminar relacionamento' ? '"Someone Like You" - Adele' : '"Don\'t Stop Me Now" - Queen'}
+🎵 "Sorry" - Justin Bieber
+Uma música moderna e direta sobre pedir perdão
 
-Uma música pode ajudar a expressar sentimentos que são difíceis de verbalizar.`;
+🎵 "Apologize" - OneRepublic
+Para expressar arrependimento profundo
+
+🎵 "Back to December" - Taylor Swift
+Sobre reconhecer erros e querer voltar atrás
+
+Playlist completa disponível para ajudar a expressar seus sentimentos.`,
+
+    'terminar relacionamento': `🎵 Sugestões de Músicas para Término:
+
+🎵 "Someone Like You" - Adele
+Para aceitar e seguir em frente
+
+🎵 "The Night We Met" - Lord Huron
+Sobre valorizar os momentos compartilhados
+
+🎵 "Drivers License" - Olivia Rodrigo
+Para processar sentimentos de término
+
+Músicas que ajudam a expressar sentimentos complexos de fim de relacionamento.`,
+
+    'recusar convite': `🎵 Sugestões para Momentos Difíceis:
+
+🎵 "Respect" - Aretha Franklin
+Sobre manter limites com respeito
+
+🎵 "Rather Be" - Clean Bandit
+Sobre estar onde você precisa estar
+
+Músicas sobre autenticidade e limites saudáveis.`,
+
+    'falar que está magoado': `🎵 Sugestões para Expressar Mágoa:
+
+🎵 "The Scientist" - Coldplay
+Sobre vulnerabilidade e desejo de resolver
+
+🎵 "Someone You Loved" - Lewis Capaldi
+Para expressar sentimentos de dor emocional
+
+🎵 "When I Was Your Man" - Bruno Mars
+Sobre refletir sobre o que aconteceu
+
+Músicas que ajudam a processar e expressar mágoa de forma saudável.`,
+
+    'default': `🎵 Sugestões Musicais:
+
+🎵 "Brave" - Sara Bareilles
+Sobre ter coragem para falar o que sente
+
+🎵 "Fight Song" - Rachel Platten
+Para encontrar força interior
+
+🎵 "Hall of Fame" - The Script
+Sobre se superar e crescer
+
+Músicas inspiradoras para momentos de conversa difícil.`
+  };
+
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return musicasModelos[tipo] || musicasModelos['default'];
 }
 
 function gerarDicaExtra(extraId, choices) {

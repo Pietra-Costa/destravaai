@@ -1,7 +1,6 @@
-// Geradores de conteúdo para extras
 
-export function gerarCarta(tipoConversa: string, tom: string): string {
-  const cartasModelos: Record<string, string> = {
+function gerarCartaCompleta(tipoConversa, tom) {
+  const cartasModelos = {
     'pedir desculpas': `Querido(a),
 
 Escrevo esta carta porque preciso expressar algo que tem pesado no meu coração. Sei que minhas ações causaram dor e desconforto, e por isso peço sinceras desculpas.
@@ -45,8 +44,8 @@ Com carinho,
   return cartasModelos[tipoConversa] || cartasModelos['default'];
 }
 
-export function gerarMusica(tipoConversa: string): string {
-  const musicasModelos: Record<string, string> = {
+function gerarMusicaCompleta(tipoConversa) {
+  const musicasModelos = {
     'pedir desculpas': `🎵 "Recomeçar" 🎵
 
 (Verso 1)
@@ -147,8 +146,8 @@ E isso é mais importante que qualquer vaidade`
   return musicasModelos[tipoConversa] || musicasModelos['default'];
 }
 
-export function gerarPoema(tipoConversa: string): string {
-  const poemasModelos: Record<string, string> = {
+function gerarPoemaCompleto(tipoConversa) {
+  const poemasModelos = {
     'pedir desculpas': `📜 "Perdão"
 
 No silêncio da madrugada,
@@ -219,8 +218,8 @@ Vale a pena lutar pra salvar.`
   return poemasModelos[tipoConversa] || poemasModelos['default'];
 }
 
-export function gerarIdeiasPresente(tipoConversa: string): string[] {
-  const presentesModelos: Record<string, string[]> = {
+function gerarIdeiasPresente(tipoConversa) {
+  const presentesModelos = {
     'pedir desculpas': [
       '🌹 Flores com um cartão sincero - Um gesto clássico que demonstra cuidado e arrependimento',
       '📖 Livro significativo - Escolha algo que mostre que você conhece os gostos da pessoa',
