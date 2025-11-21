@@ -152,12 +152,22 @@
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
 
+    function updateAluraLogo() {
+      const aluraLogo = document.querySelector('.alura-logo');
+      const isDark = html.classList.contains("dark");
+      if (aluraLogo) {
+        aluraLogo.src = isDark ? "assets/alura.avif" : "assets/alura-dark.png";
+      }
+    }
+
     const currentTheme = localStorage.getItem('theme') || 'dark';
     html.classList.toggle('dark', currentTheme === 'dark');
+    updateAluraLogo();
 
      themeToggle.addEventListener('click', () => {
        const isDark = html.classList.toggle('dark');
        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+       updateAluraLogo();
      });
    </script>
 

@@ -1,7 +1,22 @@
 const btnMode = document.querySelector('#theme-toggle');
+const html = document.documentElement;
+
+function updateAluraLogo() {
+  const aluraLogo = document.querySelector('.alura-logo');
+  const isDark = html.classList.contains("dark");
+  if (aluraLogo) {
+    aluraLogo.src = isDark ? "assets/alura.avif" : "assets/alura-dark.png";
+  }
+}
+
+const currentTheme = localStorage.getItem('theme') || 'dark';
+html.classList.toggle('dark', currentTheme === 'dark');
+updateAluraLogo();
 
 btnMode.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
+  const isDark = html.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  updateAluraLogo();
 });
 
 const options = [
@@ -24,6 +39,7 @@ let proximityLevelData = [];
 let conversationToneData = [];
 let conversationLengthData = [];
 let actionsData = [];
+let generatorsData = {};
 
 async function loadData() {
   try {
@@ -36,6 +52,9 @@ async function loadData() {
     conversationLengthData = data.conversationLength || [];
     actionsData = data.actions || [];
     
+    const generatorsResponse = await fetch('data/generators.json');
+    generatorsData = await generatorsResponse.json();
+    
     renderStep2Cards();
     renderStep3ProximityCards();
     renderStep4Cards();
@@ -44,6 +63,62 @@ async function loadData() {
   } catch (error) {
     console.error('Erro ao carregar dados:', error);
   }
+}
+
+function generateRoteiro(choices) {
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return generatorsData.roteiros?.[tipo] || generatorsData.roteiros?.default || [];
+}
+
+function getStepDetails(index, conversationType) {
+  const tipo = conversationType ? conversationType.toLowerCase() : 'default';
+  const details = generatorsData.stepDetails?.[tipo] || generatorsData.stepDetails?.default || [];
+  return details[index] || { 
+    tips: [
+      '✓ Continue com sinceridade',
+      '✓ Mantenha a calma',
+      '✓ Seja autêntico'
+    ] 
+  };
+}
+
+function generateFrase(choices) {
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return generatorsData.frases?.[tipo] || generatorsData.frases?.default || '';
+}
+
+function generateSentimentos(choices) {
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return generatorsData.sentimentos?.[tipo] || generatorsData.sentimentos?.default || '';
+}
+
+function generateEvitar(choices) {
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return generatorsData.evitar?.[tipo] || generatorsData.evitar?.default || [];
+}
+
+function generateFinalizar(choices) {
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return generatorsData.finalizar?.[tipo] || generatorsData.finalizar?.default || '';
+}
+
+function gerarCarta(choices) {
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return generatorsData.cartas?.[tipo] || generatorsData.cartas?.default || '';
+}
+
+function gerarPoema(choices) {
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return generatorsData.poemas?.[tipo] || generatorsData.poemas?.default || '';
+}
+
+function gerarMusica(choices) {
+  const tipo = choices.conversationType ? choices.conversationType.toLowerCase() : 'default';
+  return generatorsData.musicas?.[tipo] || generatorsData.musicas?.default || '';
+}
+
+function gerarDicaExtra(extraId, choices) {
+  return generatorsData.dicasExtras?.[extraId] || `Dica personalizada para: ${extraId}`;
 }
 
 loadData();
@@ -740,7 +815,59 @@ function generateResults() {
   }, 100);
   
   document.getElementById('printButton').addEventListener('click', () => window.print());
-  document.getElementById('newConversation').addEventListener('click', () => location.reload());
   
   resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+function resetForm() {
+  // Esconde resultados
+  const resultsSection = document.getElementById('results');
+  if (resultsSection) {
+    resultsSection.style.display = 'none';
+  }
+  
+  // Mostra timeline e navegação
+  const timeline = document.querySelector('.timeline-container');
+  const navigation = document.querySelector('.form-navigation');
+  if (timeline) timeline.style.display = 'block';
+  if (navigation) navigation.style.display = 'flex';
+  
+  // Reseta variáveis
+  currentStep = 1;
+  selectedCard = null;
+  selectedStep2Card = null;
+  selectedProximityCard = null;
+  selectedToneCard = null;
+  selectedLengthCard = null;
+  selectedExtras = [];
+  
+  // Limpa inputs
+  const step1Input = document.getElementById('step1Input');
+  if (step1Input) step1Input.value = '';
+  
+  // Remove seleções dos cards
+  document.querySelectorAll('.conversation-card, .step2-card, .step3-proximity-card, .step4-card, .step5-card, .step6-card').forEach(card => {
+    card.classList.remove('selected');
+  });
+  
+  // Limpa containers de cards
+  document.querySelectorAll('.cards, .cards-step2, .cards-step3-proximity, .cards-step4, .cards-step5, .cards-step6').forEach(container => {
+    container.innerHTML = '';
+  });
+  
+  // Renderiza os cards novamente
+  renderCards();
+  renderStep2Cards();
+  renderStep3ProximityCards();
+  renderStep4Cards();
+  renderStep5Cards();
+  renderStep6Cards();
+  
+  // Volta para step 1
+  showStep(1);
+  
+  // Scroll para o topo
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById('newConversation').addEventListener('click', resetForm);
