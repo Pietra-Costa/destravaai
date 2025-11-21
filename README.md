@@ -1,8 +1,7 @@
 # 💬 Destrava Aí — Porque algumas conversas pesam mais que palavras
 
-Sabe aquela conversa díficil que fica rondando a cabeça?  
-Seja com o chefe, com o parceiro, com um amigo…  
-Aquela que aperta o peito só de imaginar, que faz o coração acelerar e a mente ensaiar mil versões — e mesmo assim nada sai?
+Sabe aquela conversa díficil que fica rondando a cabeça? Seja com o chefe, com o parceiro, com um amigo…  
+Aquela que aperta o peito só de imaginar, que faz o coração acelerar e a mente ensaiar mil versões...e mesmo assim nada sai?
 
 A verdade é: **tem coisas que a gente precisa dizer, mas não sabe como começar**. E ficamos travados entre “tenho que falar” e “não faço ideia de por onde começar”.
 
