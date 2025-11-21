@@ -820,19 +820,16 @@ function generateResults() {
 }
 
 function resetForm() {
-  // Esconde resultados
   const resultsSection = document.getElementById('results');
   if (resultsSection) {
     resultsSection.style.display = 'none';
   }
   
-  // Mostra timeline e navegação
   const timeline = document.querySelector('.timeline-container');
   const navigation = document.querySelector('.form-navigation');
   if (timeline) timeline.style.display = 'block';
   if (navigation) navigation.style.display = 'flex';
   
-  // Reseta variáveis
   currentStep = 1;
   selectedCard = null;
   selectedStep2Card = null;
@@ -841,21 +838,17 @@ function resetForm() {
   selectedLengthCard = null;
   selectedExtras = [];
   
-  // Limpa inputs
   const step1Input = document.getElementById('step1Input');
   if (step1Input) step1Input.value = '';
   
-  // Remove seleções dos cards
   document.querySelectorAll('.conversation-card, .step2-card, .step3-proximity-card, .step4-card, .step5-card, .step6-card').forEach(card => {
     card.classList.remove('selected');
   });
   
-  // Limpa containers de cards
   document.querySelectorAll('.cards, .cards-step2, .cards-step3-proximity, .cards-step4, .cards-step5, .cards-step6').forEach(container => {
     container.innerHTML = '';
   });
   
-  // Renderiza os cards novamente
   renderCards();
   renderStep2Cards();
   renderStep3ProximityCards();
@@ -863,10 +856,8 @@ function resetForm() {
   renderStep5Cards();
   renderStep6Cards();
   
-  // Volta para step 1
   showStep(1);
   
-  // Scroll para o topo
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
