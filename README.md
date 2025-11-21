@@ -77,6 +77,24 @@ E o **Destrava Aí** existe para aliviar exatamente esse peso.
 </div>
 
 ---
+## ⚙️ Funcionalidades
+
+O **Destrava Aí** foi pensado para ser leve, acessível e extremamente funcional:
+
+### 🌗 **Light/Dark Mode**
+Alteração instantânea entre modo claro e escuro para melhorar a leitura em qualquer ambiente.  
+Sem depender de bibliotecas — tudo feito com CSS e JavaScript nativo.
+
+### ✨ **Animações em CSS**
+Transições suaves, microinterações e movimento sutil para deixar a experiência mais fluida sem pesar o carregamento.
+
+### 📚 **Dados Mockados**
+A base de conhecimento usada pelo app foi mockada com ajuda do **Gemini**, permitindo simular um backend organizado e realista mesmo sem servidor.
+
+### 🖨️ **Imprimir Guia**
+O usuário pode imprimir qualquer roteiro completo em **um clique**, gerando uma versão limpa, objetiva e pronta para uso offline.
+
+---
 
 ## 🛠 Feito com simplicidade
 
