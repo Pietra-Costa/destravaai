@@ -1,4 +1,4 @@
-# 💬 Destrava Aí — Porque algumas conversas pesam mais que toneladas - Imersão Dev Alura e Gemini
+# 💬 Destrava Aí — Porque algumas conversas pesam mais que toneladas
 
 Sabe aquela conversa díficil que fica rondando a cabeça? Seja com o chefe, com o parceiro, com um amigo…  
 Aquela que aperta o peito só de imaginar, que faz o coração acelerar e a mente ensaiar mil versões...e mesmo assim nada sai?
@@ -9,7 +9,6 @@ E como estudante de psicologia, eu percebo diariamente o quanto essa dificuldade
 
 Foi dessa dor que nasceu o **Destrava Aí**.
 
-Criado durante a **Imersão Alura + Gemini 2025**, ele surgiu exatamente onde tecnologia e vulnerabilidade se encontram. Um lugar onde aprender e experimentar abre espaço para transformar uma dificuldade silenciosa em uma solução real.
 
 <div align="center">
     <img width="300" height="500" alt="356shots_so" src="https://github.com/user-attachments/assets/c8acc6e3-daee-4f47-9ead-bcb9238e7a07" />
@@ -34,21 +33,7 @@ A gente nem sabia que precisava disso… até existir.
 
 ---
 
-## 🤖 Uma base de conhecimento gigante — possível graças ao Gemini
 
-O **Destrava Aí** só é o que é porque o **Gemini** ajudou a construir uma base de conhecimento robusta, diversa e super organizada.
-
-Foram gerados:
-
-- múltiplos tipos de conversas  
-- dezenas de tons e tamanhos  
-- variações emocionais  
-- orientações do que dizer e do que evitar  
-- finais adequados para contextos diferentes  
-
-Tudo com uma consistência que seria impossível produzir manualmente em apenas alguns dias de imersão.
-
-A combinação **Alura + Gemini** transformou o projeto de um rascunho tímido em uma ferramenta útil de verdade.
 
 <div align="center">
   <img width="500" height="500" alt="288shots_so" src="https://github.com/user-attachments/assets/a8e6b942-ce57-4c79-acd4-d248fa126d3a" />
